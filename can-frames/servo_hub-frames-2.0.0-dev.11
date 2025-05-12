@@ -1,0 +1,1059 @@
+{
+    "frcJsonSpecVersion": "1.0.0",
+    "framesVersion": "0.0.1-dev.1",
+    "deviceInfo": { "deviceType": "ServoController", "deviceTypeNumber": 12, "manufacturer": "REV", "manufacturerNumber": 5 },
+    "periodicFrames": {
+        "STATUS_0": {
+            "name": "Status 0",
+            "description": "Status frame that holds general important information",
+            "apiClass": 46,
+            "apiIndex": 0,
+            "arbId": 201701376,
+            "lengthBytes": 5,
+            "signals": {
+                "VOLTAGE": { "type": "uint", "name": "voltage", "bitPosition": 0, "isBigEndian": false, "lengthBits": 10, "decodeScaleFactor": 0.025, "offset": 0, "unit": "V", "encodedMin": 0, "encodedMax": 1023 },
+                "SERVO_VOLTAGE": {
+                    "type": "uint",
+                    "name": "servo voltage",
+                    "bitPosition": 10,
+                    "isBigEndian": false,
+                    "lengthBits": 10,
+                    "decodeScaleFactor": 0.025,
+                    "offset": 0,
+                    "unit": "V",
+                    "encodedMin": 0,
+                    "encodedMax": 1023
+                },
+                "DEVICE_CURRENT": {
+                    "type": "uint",
+                    "name": "device current",
+                    "bitPosition": 20,
+                    "isBigEndian": false,
+                    "lengthBits": 10,
+                    "decodeScaleFactor": 0.02,
+                    "offset": 0,
+                    "unit": "A",
+                    "encodedMin": 0,
+                    "encodedMax": 1023
+                },
+                "PRIMARY_HEARTBEAT_LOCK": {
+                    "type": "boolean",
+                    "name": "primary heartbeat lock",
+                    "bitPosition": 30,
+                    "isBigEndian": false,
+                    "lengthBits": 1,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "encodedMin": 0,
+                    "encodedMax": 1
+                },
+                "SYSTEM_ENABLED": { "type": "boolean", "name": "system enabled", "bitPosition": 31, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "COMMUNICATION_MODE": {
+                    "type": "uint",
+                    "name": "communication mode",
+                    "description": "0: None, 1: CAN, 2: RS-485",
+                    "bitPosition": 32,
+                    "isBigEndian": false,
+                    "lengthBits": 3,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "encodedMin": 0,
+                    "encodedMax": 7
+                },
+                "RESERVED": { "type": "uint", "name": "reserved", "bitPosition": 35, "isBigEndian": false, "lengthBits": 5, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 31 }
+            },
+            "versionImplemented": "25.0.0",
+            "broadcast": false,
+            "defaultPeriodMs": 40,
+            "enabledByDefault": true
+        },
+        "STATUS_1": {
+            "name": "Status 1",
+            "description": "Faults",
+            "apiClass": 46,
+            "apiIndex": 1,
+            "arbId": 201701440,
+            "lengthBytes": 8,
+            "signals": {
+                "REGULATOR_PGOOD_FAULT": {
+                    "type": "boolean",
+                    "name": "Regulator PGood Fault",
+                    "bitPosition": 0,
+                    "isBigEndian": false,
+                    "lengthBits": 1,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "encodedMin": 0,
+                    "encodedMax": 1
+                },
+                "BROWNOUT": { "type": "boolean", "name": "Brownout", "bitPosition": 1, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "CAN_WARNING": { "type": "boolean", "name": "CAN Warning", "bitPosition": 2, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "CAN_BUS_OFF": { "type": "boolean", "name": "CAN Bus Off", "bitPosition": 3, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "HARDWARE_FAULT": { "type": "boolean", "name": "Hardware Fault", "bitPosition": 4, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "FIRMWARE_FAULT": { "type": "boolean", "name": "Firmware Fault", "bitPosition": 5, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "HAS_RESET": { "type": "boolean", "name": "Has Reset", "bitPosition": 6, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "CHANNEL_0_OVERCURRENT": {
+                    "type": "boolean",
+                    "name": "Channel 0 overcurrent",
+                    "bitPosition": 7,
+                    "isBigEndian": false,
+                    "lengthBits": 1,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "encodedMin": 0,
+                    "encodedMax": 1
+                },
+                "CHANNEL_1_OVERCURRENT": {
+                    "type": "boolean",
+                    "name": "Channel 1 overcurrent",
+                    "bitPosition": 8,
+                    "isBigEndian": false,
+                    "lengthBits": 1,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "encodedMin": 0,
+                    "encodedMax": 1
+                },
+                "CHANNEL_2_OVERCURRENT": {
+                    "type": "boolean",
+                    "name": "Channel 2 overcurrent",
+                    "bitPosition": 9,
+                    "isBigEndian": false,
+                    "lengthBits": 1,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "encodedMin": 0,
+                    "encodedMax": 1
+                },
+                "CHANNEL_3_OVERCURRENT": {
+                    "type": "boolean",
+                    "name": "Channel 3 overcurrent",
+                    "bitPosition": 10,
+                    "isBigEndian": false,
+                    "lengthBits": 1,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "encodedMin": 0,
+                    "encodedMax": 1
+                },
+                "CHANNEL_4_OVERCURRENT": {
+                    "type": "boolean",
+                    "name": "Channel 4 overcurrent",
+                    "bitPosition": 11,
+                    "isBigEndian": false,
+                    "lengthBits": 1,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "encodedMin": 0,
+                    "encodedMax": 1
+                },
+                "CHANNEL_5_OVERCURRENT": {
+                    "type": "boolean",
+                    "name": "Channel 5 overcurrent",
+                    "bitPosition": 12,
+                    "isBigEndian": false,
+                    "lengthBits": 1,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "encodedMin": 0,
+                    "encodedMax": 1
+                },
+                "LOW_BATTERY_FAULT": { "type": "boolean", "name": "Low Battery Fault", "bitPosition": 13, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "RESERVED": { "type": "uint", "name": "reserved", "bitPosition": 14, "isBigEndian": false, "lengthBits": 18, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 262143 },
+                "STICKY_REGULATOR_PGOOD_FAULT": {
+                    "type": "boolean",
+                    "name": "Sticky Regulator PGood Fault",
+                    "bitPosition": 32,
+                    "isBigEndian": false,
+                    "lengthBits": 1,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "encodedMin": 0,
+                    "encodedMax": 1
+                },
+                "STICKY_BROWNOUT": { "type": "boolean", "name": "Sticky Brownout", "bitPosition": 33, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "STICKY_CAN_WARNING": { "type": "boolean", "name": "Sticky CAN Warning", "bitPosition": 34, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "STICKY_CAN_BUS_OFF": { "type": "boolean", "name": "Sticky CAN Bus Off", "bitPosition": 35, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "STICKY_HARDWARE_FAULT": {
+                    "type": "boolean",
+                    "name": "Sticky Hardware Fault",
+                    "bitPosition": 36,
+                    "isBigEndian": false,
+                    "lengthBits": 1,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "encodedMin": 0,
+                    "encodedMax": 1
+                },
+                "STICKY_FIRMWARE_FAULT": {
+                    "type": "boolean",
+                    "name": "Sticky Firmware Fault",
+                    "bitPosition": 37,
+                    "isBigEndian": false,
+                    "lengthBits": 1,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "encodedMin": 0,
+                    "encodedMax": 1
+                },
+                "STICKY_HAS_RESET": { "type": "boolean", "name": "Sticky Has Reset", "bitPosition": 38, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "STICKY_CHANNEL_0_OVERCURRENT": {
+                    "type": "boolean",
+                    "name": "Sticky Channel 0 overcurrent",
+                    "bitPosition": 39,
+                    "isBigEndian": false,
+                    "lengthBits": 1,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "encodedMin": 0,
+                    "encodedMax": 1
+                },
+                "STICKY_CHANNEL_1_OVERCURRENT": {
+                    "type": "boolean",
+                    "name": "Sticky Channel 1 overcurrent",
+                    "bitPosition": 40,
+                    "isBigEndian": false,
+                    "lengthBits": 1,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "encodedMin": 0,
+                    "encodedMax": 1
+                },
+                "STICKY_CHANNEL_2_OVERCURRENT": {
+                    "type": "boolean",
+                    "name": "Sticky Channel 2 overcurrent",
+                    "bitPosition": 41,
+                    "isBigEndian": false,
+                    "lengthBits": 1,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "encodedMin": 0,
+                    "encodedMax": 1
+                },
+                "STICKY_CHANNEL_3_OVERCURRENT": {
+                    "type": "boolean",
+                    "name": "Sticky Channel 3 overcurrent",
+                    "bitPosition": 42,
+                    "isBigEndian": false,
+                    "lengthBits": 1,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "encodedMin": 0,
+                    "encodedMax": 1
+                },
+                "STICKY_CHANNEL_4_OVERCURRENT": {
+                    "type": "boolean",
+                    "name": "Sticky Channel 4 overcurrent",
+                    "bitPosition": 43,
+                    "isBigEndian": false,
+                    "lengthBits": 1,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "encodedMin": 0,
+                    "encodedMax": 1
+                },
+                "STICKY_CHANNEL_5_OVERCURRENT": {
+                    "type": "boolean",
+                    "name": "Sticky Channel 5 overcurrent",
+                    "bitPosition": 44,
+                    "isBigEndian": false,
+                    "lengthBits": 1,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "encodedMin": 0,
+                    "encodedMax": 1
+                },
+                "STICKY_LOW_BATTERY_FAULT": {
+                    "type": "boolean",
+                    "name": "Sticky Low Battery Fault",
+                    "bitPosition": 45,
+                    "isBigEndian": false,
+                    "lengthBits": 1,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "encodedMin": 0,
+                    "encodedMax": 1
+                },
+                "RESERVED_2": { "type": "uint", "name": "reserved 2", "bitPosition": 46, "isBigEndian": false, "lengthBits": 18, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 262143 }
+            },
+            "versionImplemented": "25.0.0",
+            "broadcast": false,
+            "defaultPeriodMs": 250,
+            "enabledByDefault": true
+        },
+        "STATUS_2": {
+            "name": "Status 2",
+            "description": "Channel 0-2 state",
+            "apiClass": 46,
+            "apiIndex": 2,
+            "arbId": 201701504,
+            "lengthBytes": 7,
+            "signals": {
+                "CHANNEL_0_PULSE_WIDTH": {
+                    "type": "uint",
+                    "name": "channel 0 pulse width",
+                    "bitPosition": 0,
+                    "isBigEndian": false,
+                    "lengthBits": 16,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "unit": "uS",
+                    "encodedMin": 0,
+                    "encodedMax": 65535
+                },
+                "CHANNEL_1_PULSE_WIDTH": {
+                    "type": "uint",
+                    "name": "channel 1 pulse width",
+                    "bitPosition": 16,
+                    "isBigEndian": false,
+                    "lengthBits": 16,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "unit": "uS",
+                    "encodedMin": 0,
+                    "encodedMax": 65535
+                },
+                "CHANNEL_2_PULSE_WIDTH": {
+                    "type": "uint",
+                    "name": "channel 2 pulse width",
+                    "bitPosition": 32,
+                    "isBigEndian": false,
+                    "lengthBits": 16,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "unit": "uS",
+                    "encodedMin": 0,
+                    "encodedMax": 65535
+                },
+                "CHANNEL_0_ENABLED": { "type": "boolean", "name": "channel 0 enabled", "bitPosition": 48, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "CHANNEL_1_ENABLED": { "type": "boolean", "name": "channel 1 enabled", "bitPosition": 49, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "CHANNEL_2_ENABLED": { "type": "boolean", "name": "channel 2 enabled", "bitPosition": 50, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "CHANNEL_0_OUT_OF_RANGE": {
+                    "type": "boolean",
+                    "name": "channel 0 out of range",
+                    "bitPosition": 51,
+                    "isBigEndian": false,
+                    "lengthBits": 1,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "encodedMin": 0,
+                    "encodedMax": 1
+                },
+                "CHANNEL_1_OUT_OF_RANGE": {
+                    "type": "boolean",
+                    "name": "channel 1 out of range",
+                    "bitPosition": 52,
+                    "isBigEndian": false,
+                    "lengthBits": 1,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "encodedMin": 0,
+                    "encodedMax": 1
+                },
+                "CHANNEL_2_OUT_OF_RANGE": {
+                    "type": "boolean",
+                    "name": "channel 2 out of range",
+                    "bitPosition": 53,
+                    "isBigEndian": false,
+                    "lengthBits": 1,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "encodedMin": 0,
+                    "encodedMax": 1
+                },
+                "RESERVED": { "type": "uint", "name": "reserved", "bitPosition": 54, "isBigEndian": false, "lengthBits": 2, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 3 }
+            },
+            "versionImplemented": "25.0.0",
+            "broadcast": false,
+            "defaultPeriodMs": 40,
+            "enabledByDefault": true
+        },
+        "STATUS_3": {
+            "name": "Status 3",
+            "description": "Channel 3-5 state",
+            "apiClass": 46,
+            "apiIndex": 3,
+            "arbId": 201701568,
+            "lengthBytes": 7,
+            "signals": {
+                "CHANNEL_3_PULSE_WIDTH": {
+                    "type": "uint",
+                    "name": "channel 3 pulse width",
+                    "bitPosition": 0,
+                    "isBigEndian": false,
+                    "lengthBits": 16,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "unit": "uS",
+                    "encodedMin": 0,
+                    "encodedMax": 65535
+                },
+                "CHANNEL_4_PULSE_WIDTH": {
+                    "type": "uint",
+                    "name": "channel 4 pulse width",
+                    "bitPosition": 16,
+                    "isBigEndian": false,
+                    "lengthBits": 16,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "unit": "uS",
+                    "encodedMin": 0,
+                    "encodedMax": 65535
+                },
+                "CHANNEL_5_PULSE_WIDTH": {
+                    "type": "uint",
+                    "name": "channel 5 pulse width",
+                    "bitPosition": 32,
+                    "isBigEndian": false,
+                    "lengthBits": 16,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "unit": "uS",
+                    "encodedMin": 0,
+                    "encodedMax": 65535
+                },
+                "CHANNEL_3_ENABLED": { "type": "boolean", "name": "channel 3 enabled", "bitPosition": 48, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "CHANNEL_4_ENABLED": { "type": "boolean", "name": "channel 4 enabled", "bitPosition": 49, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "CHANNEL_5_ENABLED": { "type": "boolean", "name": "channel 5 enabled", "bitPosition": 50, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "CHANNEL_3_OUT_OF_RANGE": {
+                    "type": "boolean",
+                    "name": "channel 3 out of range",
+                    "bitPosition": 51,
+                    "isBigEndian": false,
+                    "lengthBits": 1,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "encodedMin": 0,
+                    "encodedMax": 1
+                },
+                "CHANNEL_4_OUT_OF_RANGE": {
+                    "type": "boolean",
+                    "name": "channel 4 out of range",
+                    "bitPosition": 52,
+                    "isBigEndian": false,
+                    "lengthBits": 1,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "encodedMin": 0,
+                    "encodedMax": 1
+                },
+                "CHANNEL_5_OUT_OF_RANGE": {
+                    "type": "boolean",
+                    "name": "channel 5 out of range",
+                    "bitPosition": 53,
+                    "isBigEndian": false,
+                    "lengthBits": 1,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "encodedMin": 0,
+                    "encodedMax": 1
+                },
+                "RESERVED": { "type": "uint", "name": "reserved", "bitPosition": 54, "isBigEndian": false, "lengthBits": 2, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 3 }
+            },
+            "versionImplemented": "25.0.0",
+            "broadcast": false,
+            "defaultPeriodMs": 40,
+            "enabledByDefault": true
+        },
+        "STATUS_4": {
+            "name": "Status 4",
+            "description": "Channel currents",
+            "apiClass": 46,
+            "apiIndex": 4,
+            "arbId": 201701632,
+            "lengthBytes": 8,
+            "signals": {
+                "CHANNEL_0_CURRENT": {
+                    "type": "uint",
+                    "name": "channel 0 current",
+                    "bitPosition": 0,
+                    "isBigEndian": false,
+                    "lengthBits": 10,
+                    "decodeScaleFactor": 0.01,
+                    "offset": 0,
+                    "unit": "A",
+                    "encodedMin": 0,
+                    "encodedMax": 1023
+                },
+                "CHANNEL_1_CURRENT": {
+                    "type": "uint",
+                    "name": "channel 1 current",
+                    "bitPosition": 10,
+                    "isBigEndian": false,
+                    "lengthBits": 10,
+                    "decodeScaleFactor": 0.01,
+                    "offset": 0,
+                    "unit": "A",
+                    "encodedMin": 0,
+                    "encodedMax": 1023
+                },
+                "CHANNEL_2_CURRENT": {
+                    "type": "uint",
+                    "name": "channel 2 current",
+                    "bitPosition": 20,
+                    "isBigEndian": false,
+                    "lengthBits": 10,
+                    "decodeScaleFactor": 0.01,
+                    "offset": 0,
+                    "unit": "A",
+                    "encodedMin": 0,
+                    "encodedMax": 1023
+                },
+                "CHANNEL_3_CURRENT": {
+                    "type": "uint",
+                    "name": "channel 3 current",
+                    "bitPosition": 30,
+                    "isBigEndian": false,
+                    "lengthBits": 10,
+                    "decodeScaleFactor": 0.01,
+                    "offset": 0,
+                    "unit": "A",
+                    "encodedMin": 0,
+                    "encodedMax": 1023
+                },
+                "CHANNEL_4_CURRENT": {
+                    "type": "uint",
+                    "name": "channel 4 current",
+                    "bitPosition": 40,
+                    "isBigEndian": false,
+                    "lengthBits": 10,
+                    "decodeScaleFactor": 0.01,
+                    "offset": 0,
+                    "unit": "A",
+                    "encodedMin": 0,
+                    "encodedMax": 1023
+                },
+                "CHANNEL_5_CURRENT": {
+                    "type": "uint",
+                    "name": "channel 5 current",
+                    "bitPosition": 50,
+                    "isBigEndian": false,
+                    "lengthBits": 10,
+                    "decodeScaleFactor": 0.01,
+                    "offset": 0,
+                    "unit": "A",
+                    "encodedMin": 0,
+                    "encodedMax": 1023
+                },
+                "RESERVED": { "type": "uint", "name": "reserved", "bitPosition": 60, "isBigEndian": false, "lengthBits": 4, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 15 }
+            },
+            "versionImplemented": "25.0.0",
+            "broadcast": false,
+            "defaultPeriodMs": 40,
+            "enabledByDefault": true
+        }
+    },
+    "nonPeriodicFrames": {
+        "SET_SERVO_0_TO_2_PULSE_WIDTHS": {
+            "name": "Set Servo 0 to 2 Pulse Widths",
+            "description": "Set the position of all servo channels",
+            "apiClass": 0,
+            "apiIndex": 0,
+            "arbId": 201654272,
+            "lengthBytes": 7,
+            "signals": {
+                "PULSE_WIDTH_0": {
+                    "type": "uint",
+                    "name": "pulse width 0",
+                    "bitPosition": 0,
+                    "isBigEndian": false,
+                    "lengthBits": 16,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "unit": "uS",
+                    "encodedMin": 0,
+                    "encodedMax": 65535
+                },
+                "PULSE_WIDTH_1": {
+                    "type": "uint",
+                    "name": "pulse width 1",
+                    "bitPosition": 16,
+                    "isBigEndian": false,
+                    "lengthBits": 16,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "unit": "uS",
+                    "encodedMin": 0,
+                    "encodedMax": 65535
+                },
+                "PULSE_WIDTH_2": {
+                    "type": "uint",
+                    "name": "pulse width 2",
+                    "bitPosition": 32,
+                    "isBigEndian": false,
+                    "lengthBits": 16,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "unit": "uS",
+                    "encodedMin": 0,
+                    "encodedMax": 65535
+                },
+                "ENABLE_CHANNEL_0": { "type": "boolean", "name": "enable channel 0", "bitPosition": 48, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "ENABLE_CHANNEL_1": { "type": "boolean", "name": "enable channel 1", "bitPosition": 49, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "ENABLE_CHANNEL_2": { "type": "boolean", "name": "enable channel 2", "bitPosition": 50, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "POWER_CHANNEL_0": { "type": "boolean", "name": "power channel 0", "bitPosition": 51, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "POWER_CHANNEL_1": { "type": "boolean", "name": "power channel 1", "bitPosition": 52, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "POWER_CHANNEL_2": { "type": "boolean", "name": "power channel 2", "bitPosition": 53, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "RESERVED": { "type": "uint", "name": "reserved", "bitPosition": 54, "isBigEndian": false, "lengthBits": 2, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 3 }
+            },
+            "versionImplemented": "25.0.0",
+            "broadcast": false,
+            "rtr": false
+        },
+        "SET_SERVO_3_TO_5_PULSE_WIDTHS": {
+            "name": "Set Servo 3 to 5 Pulse Widths",
+            "description": "Set the position of all servo channels",
+            "apiClass": 0,
+            "apiIndex": 1,
+            "arbId": 201654336,
+            "lengthBytes": 7,
+            "signals": {
+                "PULSE_WIDTH_3": {
+                    "type": "uint",
+                    "name": "pulse width 3",
+                    "bitPosition": 0,
+                    "isBigEndian": false,
+                    "lengthBits": 16,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "unit": "uS",
+                    "encodedMin": 0,
+                    "encodedMax": 65535
+                },
+                "PULSE_WIDTH_4": {
+                    "type": "uint",
+                    "name": "pulse width 4",
+                    "bitPosition": 16,
+                    "isBigEndian": false,
+                    "lengthBits": 16,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "unit": "uS",
+                    "encodedMin": 0,
+                    "encodedMax": 65535
+                },
+                "PULSE_WIDTH_5": {
+                    "type": "uint",
+                    "name": "pulse width 5",
+                    "bitPosition": 32,
+                    "isBigEndian": false,
+                    "lengthBits": 16,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "unit": "uS",
+                    "encodedMin": 0,
+                    "encodedMax": 65535
+                },
+                "ENABLE_CHANNEL_3": { "type": "boolean", "name": "enable channel 3", "bitPosition": 48, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "ENABLE_CHANNEL_4": { "type": "boolean", "name": "enable channel 4", "bitPosition": 49, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "ENABLE_CHANNEL_5": { "type": "boolean", "name": "enable channel 5", "bitPosition": 50, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "POWER_CHANNEL_3": { "type": "boolean", "name": "power channel 3", "bitPosition": 51, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "POWER_CHANNEL_4": { "type": "boolean", "name": "power channel 4", "bitPosition": 52, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "POWER_CHANNEL_5": { "type": "boolean", "name": "power channel 5", "bitPosition": 53, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "RESERVED": { "type": "uint", "name": "reserved", "bitPosition": 54, "isBigEndian": false, "lengthBits": 2, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 3 }
+            },
+            "versionImplemented": "25.0.0",
+            "broadcast": false,
+            "rtr": false
+        },
+        "SET_BANKS_PULSE_PERIOD": {
+            "name": "Set Banks Pulse Period",
+            "description": "Set the pulse period for a side of servo hub in microseconds. In response, a Set Banks Pulse Period Response frame will be sent.",
+            "apiClass": 0,
+            "apiIndex": 2,
+            "arbId": 201654400,
+            "lengthBytes": 3,
+            "signals": {
+                "CHANNEL_BANKS_BITFIELD": {
+                    "type": "uint",
+                    "name": "channel banks bitfield",
+                    "description": "A bitfield where each bit represents one of the channel banks. Bit 0 represents the bank for channels 0-2, and bit 1 represents the bank for channels 3-5",
+                    "bitPosition": 0,
+                    "isBigEndian": false,
+                    "lengthBits": 2,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "encodedMin": 0,
+                    "encodedMax": 3
+                },
+                "RESERVED": { "type": "uint", "name": "reserved", "bitPosition": 2, "isBigEndian": false, "lengthBits": 6, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 63 },
+                "PULSE_PERIOD": {
+                    "type": "uint",
+                    "name": "pulse period",
+                    "bitPosition": 8,
+                    "isBigEndian": false,
+                    "lengthBits": 16,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "unit": "uS",
+                    "encodedMin": 0,
+                    "encodedMax": 65535
+                }
+            },
+            "versionImplemented": "25.0.0",
+            "broadcast": false,
+            "rtr": false
+        },
+        "RESET_CONFIGURATION": {
+            "name": "Reset Configuration",
+            "description": "Reset the configuration to the default value",
+            "apiClass": 0,
+            "apiIndex": 4,
+            "arbId": 201654528,
+            "lengthBytes": 2,
+            "signals": {
+                "MAGIC": {
+                    "type": "uint",
+                    "name": "magic",
+                    "bitPosition": 0,
+                    "isBigEndian": false,
+                    "lengthBits": 16,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "decodedMin": 48879,
+                    "decodedMax": 48879,
+                    "encodedMin": 48879,
+                    "encodedMax": 48879
+                }
+            },
+            "versionImplemented": "25.0.0",
+            "broadcast": false,
+            "rtr": false
+        },
+        "SET_SERVO_MIN_PULSE_WIDTH": {
+            "name": "Set Servo Min Pulse Width",
+            "description": "Set the minimum pulse width for a channel in microseconds",
+            "apiClass": 0,
+            "apiIndex": 5,
+            "arbId": 201654592,
+            "lengthBytes": 3,
+            "signals": {
+                "CHANNEL": { "type": "uint", "name": "channel", "bitPosition": 0, "isBigEndian": false, "lengthBits": 8, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 255 },
+                "PULSEUS": { "type": "uint", "name": "pulseUs", "bitPosition": 8, "isBigEndian": false, "lengthBits": 16, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 65535 }
+            },
+            "versionImplemented": "25.0.0",
+            "broadcast": false,
+            "rtr": false
+        },
+        "SET_SERVO_CENTER_PULSE_WIDTH": {
+            "name": "Set Servo Center Pulse Width",
+            "description": "Set the center pulse width for a channel in microseconds",
+            "apiClass": 0,
+            "apiIndex": 6,
+            "arbId": 201654656,
+            "lengthBytes": 3,
+            "signals": {
+                "CHANNEL": { "type": "uint", "name": "channel", "bitPosition": 0, "isBigEndian": false, "lengthBits": 8, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 255 },
+                "PULSEUS": { "type": "uint", "name": "pulseUs", "bitPosition": 8, "isBigEndian": false, "lengthBits": 16, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 65535 }
+            },
+            "versionImplemented": "25.0.0",
+            "broadcast": false,
+            "rtr": false
+        },
+        "SET_SERVO_MAX_PULSE_WIDTH": {
+            "name": "Set Servo Max Pulse Width",
+            "description": "Set the maximum pulse width for a channel in microseconds",
+            "apiClass": 0,
+            "apiIndex": 7,
+            "arbId": 201654720,
+            "lengthBytes": 3,
+            "signals": {
+                "CHANNEL": { "type": "uint", "name": "channel", "bitPosition": 0, "isBigEndian": false, "lengthBits": 8, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 255 },
+                "PULSEUS": { "type": "uint", "name": "pulseUs", "bitPosition": 8, "isBigEndian": false, "lengthBits": 16, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 65535 }
+            },
+            "versionImplemented": "25.0.0",
+            "broadcast": false,
+            "rtr": false
+        },
+        "GET_PULSE_RANGE": {
+            "name": "Get Pulse Range",
+            "description": "Get the range of accepted pulse values",
+            "apiClass": 0,
+            "apiIndex": 8,
+            "arbId": 201654784,
+            "lengthBytes": 1,
+            "signals": { "CHANNEL": { "type": "uint", "name": "channel", "bitPosition": 0, "isBigEndian": false, "lengthBits": 8, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 255 } },
+            "versionImplemented": "25.0.0",
+            "broadcast": false,
+            "rtr": false
+        },
+        "SET_DISABLE_BEHAVIOR": {
+            "name": "Set Disable Behavior",
+            "description": "Set whether power should be maintained when a channel is disabled",
+            "apiClass": 0,
+            "apiIndex": 9,
+            "arbId": 201654848,
+            "lengthBytes": 2,
+            "signals": {
+                "MASK": { "type": "uint", "name": "Mask", "bitPosition": 0, "isBigEndian": false, "lengthBits": 6, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 63 },
+                "BEHAVIOR_BITFIELD": { "type": "uint", "name": "Behavior Bitfield", "bitPosition": 6, "isBigEndian": false, "lengthBits": 6, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 63 },
+                "RESERVED": { "type": "uint", "name": "Reserved", "bitPosition": 12, "isBigEndian": false, "lengthBits": 4, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 15 }
+            },
+            "versionImplemented": "25.0.0",
+            "broadcast": false,
+            "rtr": false
+        },
+        "GET_DISABLE_BEHAVIOR": {
+            "name": "Get Disable Behavior",
+            "description": "Get whether power should be maintained when a channel is disabled",
+            "apiClass": 0,
+            "apiIndex": 10,
+            "arbId": 201654912,
+            "lengthBytes": 8,
+            "signals": {
+                "BEHAVIOR_BITFIELD": { "type": "uint", "name": "Behavior Bitfield", "bitPosition": 0, "isBigEndian": false, "lengthBits": 6, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 63 },
+                "RESERVED": { "type": "uint", "name": "Reserved", "bitPosition": 6, "isBigEndian": false, "lengthBits": 58, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 288230376151711743 }
+            },
+            "versionImplemented": "25.0.0",
+            "broadcast": false,
+            "rtr": true
+        },
+        "CLEAR_FAULTS": {
+            "name": "Clear Faults",
+            "description": "In response, a Clear Faults Response frame is sent.",
+            "apiClass": 6,
+            "apiIndex": 14,
+            "arbId": 201661312,
+            "lengthBytes": 0,
+            "signals": {},
+            "versionImplemented": "25.0.0",
+            "broadcast": false,
+            "rtr": false
+        },
+        "GET_VERSION": {
+            "name": "Get Version",
+            "description": "The device version",
+            "apiClass": 9,
+            "apiIndex": 8,
+            "arbId": 201664000,
+            "lengthBytes": 8,
+            "signals": {
+                "FIRMWARE_FIX": { "type": "uint", "name": "firmware fix", "bitPosition": 0, "isBigEndian": false, "lengthBits": 8, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 255 },
+                "FIRMWARE_MINOR": { "type": "uint", "name": "firmware minor", "bitPosition": 8, "isBigEndian": false, "lengthBits": 8, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 255 },
+                "FIRMWARE_YEAR": { "type": "uint", "name": "firmware year", "bitPosition": 16, "isBigEndian": false, "lengthBits": 8, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 255 },
+                "HARDWARE_MINOR": { "type": "uint", "name": "hardware minor", "bitPosition": 24, "isBigEndian": false, "lengthBits": 8, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 255 },
+                "HARDWARE_MAJOR": { "type": "uint", "name": "hardware major", "bitPosition": 32, "isBigEndian": false, "lengthBits": 8, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 255 },
+                "RESERVED": { "type": "uint", "name": "reserved", "bitPosition": 40, "isBigEndian": false, "lengthBits": 24, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 16777215 }
+            },
+            "versionImplemented": "25.0.0",
+            "broadcast": false,
+            "rtr": false
+        },
+        "GET_HARDWARE_FAULTS": {
+            "name": "Get Hardware Faults",
+            "description": "Get detailed hardware fault information",
+            "apiClass": 16,
+            "apiIndex": 9,
+            "arbId": 201671232,
+            "lengthBytes": 8,
+            "signals": {
+                "ADC_INIT": { "type": "boolean", "name": "ADC Init", "bitPosition": 0, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "CRC_INIT": { "type": "boolean", "name": "CRC Init", "bitPosition": 1, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "DAC_INIT": { "type": "boolean", "name": "DAC Init", "bitPosition": 2, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "FDCAN_INIT": { "type": "boolean", "name": "FDCAN Init", "bitPosition": 3, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "I2C_INIT": { "type": "boolean", "name": "I2C Init", "bitPosition": 4, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "SYSCLOCK_INIT": { "type": "boolean", "name": "SYSClock Init", "bitPosition": 5, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "SPI_INIT": { "type": "boolean", "name": "SPI Init", "bitPosition": 6, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "TIM_INIT": { "type": "boolean", "name": "TIM Init", "bitPosition": 7, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "USART_INIT": { "type": "boolean", "name": "USART Init", "bitPosition": 8, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "CSA1_INIT": { "type": "boolean", "name": "CSA1 Init", "bitPosition": 9, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "CSA1_READ": { "type": "boolean", "name": "CSA1 Read", "bitPosition": 10, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "CSA1_INVALID": { "type": "boolean", "name": "CSA1 Invalid", "bitPosition": 11, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "CSA2_INIT": { "type": "boolean", "name": "CSA2 Init", "bitPosition": 12, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "CSA2_READ": { "type": "boolean", "name": "CSA2 Read", "bitPosition": 13, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "CSA2_INVALID": { "type": "boolean", "name": "CSA2 Invalid", "bitPosition": 14, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "FRC_CAN_INIT": { "type": "boolean", "name": "FRC CAN Init", "bitPosition": 15, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "CAN_TX": { "type": "boolean", "name": "CAN Tx", "bitPosition": 16, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "CAN_RX": { "type": "boolean", "name": "CAN Rx", "bitPosition": 17, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "CAN_SET_ID": { "type": "boolean", "name": "CAN Set ID", "bitPosition": 18, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "EEPROM_READ": { "type": "boolean", "name": "EEPROM Read", "bitPosition": 19, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "EEPROM_WRITE": { "type": "boolean", "name": "EEPROM Write", "bitPosition": 20, "isBigEndian": false, "lengthBits": 1, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 1 },
+                "RESERVED": { "type": "uint", "name": "Reserved", "bitPosition": 21, "isBigEndian": false, "lengthBits": 43, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 8796093022207 }
+            },
+            "versionImplemented": "25.0.0",
+            "broadcast": false,
+            "rtr": true
+        },
+        "SET_BANKS_PULSE_PERIOD_RESPONSE": {
+            "name": "Set Banks Pulse Period Response",
+            "description": "Response to set frame period command",
+            "apiClass": 20,
+            "apiIndex": 2,
+            "arbId": 201674880,
+            "lengthBytes": 4,
+            "signals": {
+                "CHANNEL_BANKS_BITFIELD": {
+                    "type": "uint",
+                    "name": "channel banks bitfield",
+                    "description": "A bitfield where each bit represents one of the channel banks. Bit 0 represents the bank for channels 0-2, and bit 1 represents the bank for channels 3-5",
+                    "bitPosition": 0,
+                    "isBigEndian": false,
+                    "lengthBits": 2,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "encodedMin": 0,
+                    "encodedMax": 3
+                },
+                "RESERVED": { "type": "uint", "name": "reserved", "bitPosition": 2, "isBigEndian": false, "lengthBits": 6, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 63 },
+                "PULSE_PERIOD": {
+                    "type": "uint",
+                    "name": "pulse period",
+                    "bitPosition": 8,
+                    "isBigEndian": false,
+                    "lengthBits": 16,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "unit": "uS",
+                    "encodedMin": 0,
+                    "encodedMax": 65535
+                },
+                "RESULT": {
+                    "type": "uint",
+                    "name": "result",
+                    "description": "0 indicates success",
+                    "bitPosition": 24,
+                    "isBigEndian": false,
+                    "lengthBits": 8,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "encodedMin": 0,
+                    "encodedMax": 255
+                }
+            },
+            "versionImplemented": "25.0.0",
+            "broadcast": false,
+            "rtr": false
+        },
+        "RESET_CONFIGURATION_RESPONSE": {
+            "name": "Reset Configuration Response",
+            "description": "Response for reset the configuration to the default value",
+            "apiClass": 20,
+            "apiIndex": 4,
+            "arbId": 201675008,
+            "lengthBytes": 2,
+            "signals": {
+                "MAGIC": {
+                    "type": "uint",
+                    "name": "magic",
+                    "bitPosition": 0,
+                    "isBigEndian": false,
+                    "lengthBits": 16,
+                    "decodeScaleFactor": 1,
+                    "offset": 0,
+                    "decodedMin": 48879,
+                    "decodedMax": 48879,
+                    "encodedMin": 48879,
+                    "encodedMax": 48879
+                }
+            },
+            "versionImplemented": "25.0.0",
+            "broadcast": false,
+            "rtr": false
+        },
+        "SET_SERVO_MIN_PULSE_RESPONSE": {
+            "name": "Set Servo Min Pulse Response",
+            "description": "Response to set min pulse width command",
+            "apiClass": 20,
+            "apiIndex": 5,
+            "arbId": 201675072,
+            "lengthBytes": 4,
+            "signals": {
+                "CHANNEL": { "type": "uint", "name": "channel", "bitPosition": 0, "isBigEndian": false, "lengthBits": 8, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 255 },
+                "PULSEUS": { "type": "uint", "name": "pulseUs", "bitPosition": 8, "isBigEndian": false, "lengthBits": 16, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 65535 },
+                "RESULT": { "type": "uint", "name": "result", "bitPosition": 24, "isBigEndian": false, "lengthBits": 8, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 255 }
+            },
+            "versionImplemented": "25.0.0",
+            "broadcast": false,
+            "rtr": false
+        },
+        "SET_SERVO_CENTER_PULSE_RESPONSE": {
+            "name": "Set Servo Center Pulse Response",
+            "description": "Response to set servo center pulse width command",
+            "apiClass": 20,
+            "apiIndex": 6,
+            "arbId": 201675136,
+            "lengthBytes": 4,
+            "signals": {
+                "CHANNEL": { "type": "uint", "name": "channel", "bitPosition": 0, "isBigEndian": false, "lengthBits": 8, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 255 },
+                "PULSEUS": { "type": "uint", "name": "pulseUs", "bitPosition": 8, "isBigEndian": false, "lengthBits": 16, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 65535 },
+                "RESULT": { "type": "uint", "name": "result", "bitPosition": 24, "isBigEndian": false, "lengthBits": 8, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 255 }
+            },
+            "versionImplemented": "25.0.0",
+            "broadcast": false,
+            "rtr": false
+        },
+        "SET_SERVO_MAX_PULSE_RESPONSE": {
+            "name": "Set Servo Max Pulse Response",
+            "description": "Response to set max pulse width command",
+            "apiClass": 20,
+            "apiIndex": 7,
+            "arbId": 201675200,
+            "lengthBytes": 4,
+            "signals": {
+                "CHANNEL": { "type": "uint", "name": "channel", "bitPosition": 0, "isBigEndian": false, "lengthBits": 8, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 255 },
+                "PULSEUS": { "type": "uint", "name": "pulseUs", "bitPosition": 8, "isBigEndian": false, "lengthBits": 16, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 65535 },
+                "RESULT": { "type": "uint", "name": "result", "bitPosition": 24, "isBigEndian": false, "lengthBits": 8, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 255 }
+            },
+            "versionImplemented": "25.0.0",
+            "broadcast": false,
+            "rtr": false
+        },
+        "GET_PULSE_RANGE_RESPONSE": {
+            "name": "Get Pulse Range Response",
+            "description": "Get the range of accepted pulse values response",
+            "apiClass": 20,
+            "apiIndex": 8,
+            "arbId": 201675264,
+            "lengthBytes": 6,
+            "signals": {
+                "MINPULSEUS": { "type": "uint", "name": "minPulseUs", "bitPosition": 0, "isBigEndian": false, "lengthBits": 16, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 65535 },
+                "CENTERPULSEUS": { "type": "uint", "name": "centerPulseUs", "bitPosition": 16, "isBigEndian": false, "lengthBits": 16, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 65535 },
+                "MAXPULSEUS": { "type": "uint", "name": "maxPulseUs", "bitPosition": 32, "isBigEndian": false, "lengthBits": 16, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 65535 }
+            },
+            "versionImplemented": "25.0.0",
+            "broadcast": false,
+            "rtr": false
+        },
+        "SET_DISABLE_BEHAVIOR_RESPONSE": {
+            "name": "Set Disable Behavior Response",
+            "description": "Set whether power should be maintained when a channel is disabled",
+            "apiClass": 20,
+            "apiIndex": 9,
+            "arbId": 201675328,
+            "lengthBytes": 3,
+            "signals": {
+                "RESULT": { "type": "uint", "name": "Result", "bitPosition": 0, "isBigEndian": false, "lengthBits": 8, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 255 },
+                "MASK": { "type": "uint", "name": "Mask", "bitPosition": 8, "isBigEndian": false, "lengthBits": 6, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 63 },
+                "BEHAVIOR_BITFIELD": { "type": "uint", "name": "Behavior Bitfield", "bitPosition": 14, "isBigEndian": false, "lengthBits": 6, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 63 },
+                "RESERVED": { "type": "uint", "name": "Reserved", "bitPosition": 20, "isBigEndian": false, "lengthBits": 4, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 15 }
+            },
+            "versionImplemented": "25.0.0",
+            "broadcast": false,
+            "rtr": false
+        },
+        "CLEAR_FAULTS_RESPONSE": {
+            "name": "Clear Faults Response",
+            "description": "Response for a Clear Faults command.",
+            "apiClass": 26,
+            "apiIndex": 14,
+            "arbId": 201681792,
+            "lengthBytes": 0,
+            "signals": {},
+            "versionImplemented": "25.0.0",
+            "broadcast": false,
+            "rtr": false
+        },
+        "SET_CAN_ID": {
+            "name": "Set CAN ID",
+            "description": "Set the CAN ID",
+            "apiClass": 31,
+            "apiIndex": 14,
+            "arbId": 201686912,
+            "lengthBytes": 1,
+            "signals": { "ID": { "type": "uint", "name": "id", "bitPosition": 0, "isBigEndian": false, "lengthBits": 8, "decodeScaleFactor": 1, "offset": 0, "encodedMin": 0, "encodedMax": 255 } },
+            "versionImplemented": "25.0.0",
+            "broadcast": false,
+            "rtr": false
+        }
+    }
+}
